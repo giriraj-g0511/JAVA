@@ -1,0 +1,74 @@
+## )Interface
+It is java member used to achieve pure abstraction and multiple inhertance.
+Interface is set of rules or protocols which every implementing class must have to follow, whether the class is blue print of object which specifies the attributes(variables) and behaviours(methods) of an object.
+Interface can have non-static methods as abstract methods only. 
+And all concrete methods are static methods or vise versa and final also.These methods are by default final.
+Interface can have variable which are initialized at the time of declaration. These variables are by default final and global variables for interface all types methods. 
+Interface also used to create frameworks.
+Interface can have static, abstract and default methods.
+Static method: In interface, static methods are implicitly final methods which cant be obverriden in child class.To access these method we have to use interface name as reference.
+Abstract method: In interface, methods which are only declared. 
+Default method: In interface, methods which are prefixed with default modifier and method body.These methods can be overriden by child.
+Interface Variables: In interface, variables declared inside interface body acts as non-static final global variables. Any interface method can access that variables from anywhere until and unless that implementing class dont have global variables with same name or implementing method does not have local variables with same name.
+	@)Example: InterfaceVariables.java
+
+Pure abstraction means only absract methods are allowed.
+Concrete method: method declaration with method body.
+Abstract method: method declaration without method body.
+
+Multiple Inheritance means a class must inherit 2 parents and these 2 parent have a common method with different implementation, and the class can override that method. When we create object of that class it can access those methods or overrided method. In interface we use interfacename to refer the interface and super to load it method and methodsignature to identify that method but all these not with class because we can inherit only one class we try to call another class method that referce to method call using class name.
+	@)Example: InterfaceMultipleInheritance.java
+
+@)Example: InterfaceObject.java
+Interface cant have constructor, so we can create its object directly, but we have to implement the absratced methods within the curly braces write after constructor. Otherwise we can create a interface type variable to hold the object reference of its child class.It is referes to upcasting same as method overriding part.
+@)Example: InterfaceInheritance.java
+Interface can also inherit the other interface only using 'extends' keyword
+Interface cant inherit a class because it may concrete methods which is not allowed, so inheriting a class for interface is restricted or invalid
+@)Example: InterfaceConcreteMethods.java
+Interface only have non-static methods as abstract methods and static method must have implementation in interface only.
+In interface same method is allowed if formal arguments are different.
+We can create interface object also for that we have write curly braces after constructor.
+@)Example: AbsractMethod.java
+If your implementing a interface which has abstract method then you have 2 choice 
+	1)Override the abstract method and provide implementation to it.
+	2)If not overriding abstract method then you have to make that class as abstarct class
+@)Example: TwoInterface.java
+If you have 2 interface one which have absract method then another which extends first interface and thier is class which implements the 2nd interface but not providing any implementation to 1st interface's abstract method then make that class as abstract class. And whenever your creating object of that class (abstarct class) write after it constructor you have to provid implementation to abstract method of first interface in curly barces and after provide semicolon. If your not providing implementation then it will throw error and does not create object of abstract class. And if abstract class also having abstract method then that method also need to be implements.
+	@)Example: AbstractMethod.java
+
+1)Functional Interface: 
+	The interface which contains only one abstract method is called as functional interface.
+	@)Example: FunctionalInterface.java
+2) Marker Interface:
+	The interface which does not contains any absract method is called as marker interface.
+
+?? )Why the interface static methods are concrete methods?
+->	Example: InterfaceStaticMethods.java
+Because,every interface implementing class is going to provide the implementation to abstract method means every another class have its own implementation to abstract method. Whether the interfaces static methods are final method default , so we cant override that methods and only accessed with interface name only. These static methods are common for all implementing classes, so reduce the duplicate code or number of lines of code from JDK1.8 interface have static methods as concrete method only.
+?? )Can we use main method in interface?
+-> Example: InterfaceMainMethod.java 
+Yes, we can use main method in main class.If we run that program it will work like java class program or it will execute instruction whic are written in main method.
+?? )Which modifier we can use for interface and it's member?
+-> Example: InterfaceModifiers.java
+1)For interface :> public, sealed, not-sealed, strictfp.
+2)For interface methods :> public, static, private, default.
+Note: variables implicitly public static final variables ,and interface and interface methods are implicitly abstract.
+
+?? )Can we create object of interface? If yes then what interface member we can accessusing it's object reference.
+-> Example: InterfaceObject.java
+We can create object of interface,
+Syntax:	
+	InterfaceName RefVariable=new InterfaceName(){};
+	
+{} is used provide the implementation to abstract methods.
+Using the reference variable we can access implemented abstarct methods and interface variables only.
+Using interface name we can access interface variables and static methods only.
+syntax:		InterfaceName.StaticMethodSignature;
+
+?? )What if the interface has only concrete(static) methods then also it is abstract?
+->	AbstractInterface.java
+	Yes, because interface is referd as set of rule or protocol so implementing class must have to follow.
+Interface are abstract by nature/implicitly.
+?? )Can we override interface methods?
+-> 	@)Example: InterfaceMultipleInheritance.java
+Yes, we can override default methods of an interface, these is functionality is provided from JDK 1.8 to provide new implementation for predefined method in interface.
